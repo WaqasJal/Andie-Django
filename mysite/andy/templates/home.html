@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Account Management</title>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			margin: 0;
+			padding: 0;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 20px;
+		}
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		input, button {
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Create an Account</h1>
+	<form action="{% url 'create_account' %}" method="post">
+		{% csrf_token %}
+		<label for="username">Username:</label>
+		<input type="text" name="username" id="username">
+		<br>
+		<label for="password">Password:</label>
+		<input type="password" name="password" id="password">
+		<br>
+		<label for="full_name">Full Name:</label>
+		<input type="text" name="full_name" id="full_name">
+		<br>
+		<label for="email">Email:</label>
+		<input type="email" name="email" id="email">
+		<br>
+		<label for="phone_number">Phone Number:</label>
+		<input type="tel" name="phone_number" id="phone_number">
+		<br>
+		<button type="submit">Create Account</button>
+	</form>
+
+	<h1>Delete an Account</h1>
+	<form action="{% url 'delete_account' %}" method="post">
+		{% csrf_token %}
+		<label for="account_id">Account ID:</label>
+		<input type="text" name="account_id" id="account_id">
+		<br>
+		<button type="submit">Delete Account</button>
+	</form>
+
+	<h1>Login</h1>
+	<form action="{% url 'login' %}" method="post">
+		 {% csrf_token %}
+		<label for="username">Username:</label>
+		<input type="text" name="username" id="username">
+		<br>
+		<label for="password">Password:</label>
+		<input type="password" name="password" id="password">
+		<br>
+		<button type="submit">Login</button>
+	</form>
+
+	<h1>Edit Account Activity</h1>
+	<form action="{% url 'edit_account_activity' %}" method="post">
+		{% csrf_token %}
+		<label for="account_id">Account ID:</label>
+		<input type="text" name="account_id" id="account_id">
+		<br>
+		<label for="page_visit_history">Page Visit History:</label>
+		<input type="text" name="page_visit_history" id="page_visit_history">
+		<br>
+		<button type="submit">Save Changes</button>
+	</form>
+
+	<h1>Create a Business</h1>
+	<form action="{% url 'create_business' %}" method="post">
+		{% csrf_token %}
+		<label for="business_name">Business Name:</label>
+		<input type="text" name="business_name" id="business_name">
+		<br>
+		<label for="category">Category:</label>
+		<input type="text" name="category" id="category">
+		<br>
+		<label for="location">Location:</label>
+		<input type="text" name="location" id="location">
+		<br>
+		<label for="phone_number">Phone Number:</label>
+		<input type="tel" name="phone_number" id="phone_number">
+		<br>
+		<button type="submit">Create Business</button>
+	</form>
+</body>
+</html>
