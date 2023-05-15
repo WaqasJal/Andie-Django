@@ -31,7 +31,7 @@
 </head>
 <body>
 	<h1>Create an Account</h1>
-	<form action="{% url 'create_account' %}" method="post">
+	<form action="" method="post">
 		{% csrf_token %}
 		<label for="username">Username:</label>
 		<input type="text" name="username" id="username">
@@ -51,8 +51,10 @@
 		<button type="submit">Create Account</button>
 	</form>
 
-	<h1>Delete an Account</h1>
-	<form action="{% url 'delete_account' %}" method="post">
+
+	
+	 <h1>Delete an Account</h1>
+	<form action="" method="post">
 		{% csrf_token %}
 		<label for="account_id">Account ID:</label>
 		<input type="text" name="account_id" id="account_id">
@@ -61,7 +63,7 @@
 	</form>
 
 	<h1>Login</h1>
-	<form action="{% url 'login' %}" method="post">
+	<form action="" method="post">
 		 {% csrf_token %}
 		<label for="username">Username:</label>
 		<input type="text" name="username" id="username">
@@ -73,7 +75,7 @@
 	</form>
 
 	<h1>Edit Account Activity</h1>
-	<form action="{% url 'edit_account_activity' %}" method="post">
+	<form action="" method="post">
 		{% csrf_token %}
 		<label for="account_id">Account ID:</label>
 		<input type="text" name="account_id" id="account_id">
@@ -85,7 +87,7 @@
 	</form>
 
 	<h1>Create a Business</h1>
-	<form action="{% url 'create_business' %}" method="post">
+	<form action="" method="post">
 		{% csrf_token %}
 		<label for="business_name">Business Name:</label>
 		<input type="text" name="business_name" id="business_name">
@@ -100,6 +102,9 @@
 		<input type="tel" name="phone_number" id="phone_number">
 		<br>
 		<button type="submit">Create Business</button>
-	</form>
+	</form> 
+
+
+
 </body>
 </html>
